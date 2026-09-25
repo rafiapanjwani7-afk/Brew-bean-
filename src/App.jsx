@@ -4,21 +4,23 @@ import Navbar from './components/Navbar';
 import CartDrawer from './components/CartDrawer';
 import Footer from './components/Footer';
 import { menuData } from './Data/menuData';
-// import CheckoutPage from './pages/CheckoutPage';
 
-// Pages
+// Pages Import (Sahi path verify kar lein)
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import Coffee from './pages/Coffee';
 import ProductDetail from './pages/ProductDetail';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import OrderConfirmation from './pages/OrderConfirmation'; // <-- Imported Here
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  // const handleClearCart = () => setCart([]);
+
+  // Cart Clear Handler (Uncommented)
+  const handleClearCart = () => setCart([]);
 
   const handleAddToCart = (item) => {
     setCart((prevCart) => {
@@ -69,11 +71,11 @@ export default function App() {
               index 
               element={
                 <Coffee 
-        items={[...(menuData?.coffee || []), ...(menuData?.desserts || []), ...(menuData?.bakery || [])]} 
-        title="ALL PRODUCTS" 
-        description="Explore our complete selection of coffee, desserts, and fresh bakery items." 
-        onAddToCart={handleAddToCart} 
-      />
+                  items={[...(menuData?.coffee || []), ...(menuData?.desserts || []), ...(menuData?.bakery || [])]} 
+                  title="ALL PRODUCTS" 
+                  description="Explore our complete selection of coffee, desserts, and fresh bakery items." 
+                  onAddToCart={handleAddToCart} 
+                />
               } 
             />
             
@@ -82,43 +84,44 @@ export default function App() {
               path="coffee" 
               element={
                 <Coffee 
-        items={menuData?.coffee || []} 
-        title="COFFEE" 
-        description="From bold espresso to smooth iced favorites." 
-        onAddToCart={handleAddToCart} 
-      />
+                  items={menuData?.coffee || []} 
+                  title="COFFEE" 
+                  description="From bold espresso to smooth iced favorites." 
+                  onAddToCart={handleAddToCart} 
+                />
               } 
             />
             <Route 
               path="desserts" 
               element={
                 <Coffee 
-        items={menuData?.desserts || []} 
-        title="DESSERTS" 
-        description="Indulgent sweet treats perfectly crafted for your coffee break." 
-        onAddToCart={handleAddToCart} 
-      />
+                  items={menuData?.desserts || []} 
+                  title="DESSERTS" 
+                  description="Indulgent sweet treats perfectly crafted for your coffee break." 
+                  onAddToCart={handleAddToCart} 
+                />
               } 
             />
             <Route 
               path="bakery" 
               element={
-               <Coffee 
-        items={menuData?.bakery || []} 
-        title="BAKERY" 
-        description="Freshly baked artisanal breads, rolls, and flaky pastries." 
-        onAddToCart={handleAddToCart} 
-      />
+                <Coffee 
+                  items={menuData?.bakery || []} 
+                  title="BAKERY" 
+                  description="Freshly baked artisanal breads, rolls, and flaky pastries." 
+                  onAddToCart={handleAddToCart} 
+                />
               } 
             />
           </Route>
-{/* <Route 
-  path="/checkout" 
-  element={<CheckoutPage cart={cart} onClearCart={handleClearCart} />} 
-/> */}
+
           <Route path="/products/:category/:id" element={<ProductDetail menuData={menuData} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+
+          {/* Checkout & Order Confirmation Routes */}
+          <Route path="/checkout" element={<OrderConfirmation />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
 
           {/* 404 Catch All Route */}
           <Route path="*" element={<NotFoundPage />} />

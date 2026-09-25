@@ -104,7 +104,7 @@ export default function HomePage({ menuData, onAddToCart }) {
       </section> */}
 
       {/* Featured Menu Items Grid */}
-      {/* <section className="py-16 px-6 max-w-7xl mx-auto">
+      <section className="py-16 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div>
             <span className="text-[11px] font-bold tracking-[0.2em] text-[#C68B59] uppercase">
@@ -128,7 +128,7 @@ export default function HomePage({ menuData, onAddToCart }) {
             <ProductCard key={item.id} item={item} onAddToCart={onAddToCart} />
           ))}
         </div>
-      </section> */}
+      </section>
 
     </div>
   );

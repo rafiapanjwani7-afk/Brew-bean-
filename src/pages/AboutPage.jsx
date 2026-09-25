@@ -69,7 +69,7 @@ export default function AboutPage() {
         </div>
 
         {/* Values Grid */}
-        {/* <div>
+        <div>
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="text-[11px] font-bold tracking-[0.25em] text-[#C68B59] uppercase">
               Our Commitment
@@ -88,7 +88,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
 
         {/* CTA Banner */}
         <div className="bg-[#3B2922] text-[#FAF7F2] p-10 md:p-12 rounded-3xl text-center space-y-4 shadow-xl">
