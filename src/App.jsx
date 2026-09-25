@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import CartDrawer from './components/CartDrawer';
 import Footer from './components/Footer';
 import { menuData } from './Data/menuData';
+// import CheckoutPage from './pages/CheckoutPage';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -17,6 +18,7 @@ import NotFoundPage from './pages/NotFoundPage';
 export default function App() {
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  // const handleClearCart = () => setCart([]);
 
   const handleAddToCart = (item) => {
     setCart((prevCart) => {
@@ -67,11 +69,11 @@ export default function App() {
               index 
               element={
                 <Coffee 
-                  items={[...(menuData?.coffee || []), ...(menuData?.desserts || []), ...(menuData?.bakery || [])]} 
-                  title="ALL PRODUCTS" 
-                  description="Explore our complete menu of specialty coffee, sweet desserts, and freshly baked goods." 
-                  onAddToCart={handleAddToCart} 
-                />
+        items={[...(menuData?.coffee || []), ...(menuData?.desserts || []), ...(menuData?.bakery || [])]} 
+        title="ALL PRODUCTS" 
+        description="Explore our complete selection of coffee, desserts, and fresh bakery items." 
+        onAddToCart={handleAddToCart} 
+      />
               } 
             />
             
@@ -80,37 +82,40 @@ export default function App() {
               path="coffee" 
               element={
                 <Coffee 
-                  items={menuData?.coffee || []} 
-                  title="COFFEE" 
-                  description="From bold espresso to smooth iced favorites." 
-                  onAddToCart={handleAddToCart} 
-                />
+        items={menuData?.coffee || []} 
+        title="COFFEE" 
+        description="From bold espresso to smooth iced favorites." 
+        onAddToCart={handleAddToCart} 
+      />
               } 
             />
             <Route 
               path="desserts" 
               element={
                 <Coffee 
-                  items={menuData?.desserts || []} 
-                  title="DESSERTS" 
-                  description="Indulgent sweet treats to pair with your brew." 
-                  onAddToCart={handleAddToCart} 
-                />
+        items={menuData?.desserts || []} 
+        title="DESSERTS" 
+        description="Indulgent sweet treats perfectly crafted for your coffee break." 
+        onAddToCart={handleAddToCart} 
+      />
               } 
             />
             <Route 
               path="bakery" 
               element={
-                <Coffee 
-                  items={menuData?.bakery || []} 
-                  title="BAKERY" 
-                  description="Freshly baked artisanal breads and pastries." 
-                  onAddToCart={handleAddToCart} 
-                />
+               <Coffee 
+        items={menuData?.bakery || []} 
+        title="BAKERY" 
+        description="Freshly baked artisanal breads, rolls, and flaky pastries." 
+        onAddToCart={handleAddToCart} 
+      />
               } 
             />
           </Route>
-
+{/* <Route 
+  path="/checkout" 
+  element={<CheckoutPage cart={cart} onClearCart={handleClearCart} />} 
+/> */}
           <Route path="/products/:category/:id" element={<ProductDetail menuData={menuData} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

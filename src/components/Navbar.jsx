@@ -5,8 +5,8 @@ import { ShoppingBag, Coffee, Heart, Search } from 'lucide-react';
 export default function Navbar({ cartCount, onOpenCart }) {
   const navLinks = [
     { name: 'HOME', path: '/' },
-    { name: 'PRODUCTS', path: '/products' },
     { name: 'ABOUT', path: '/about' },
+     { name: 'PRODUCTS', path: '/products' },
     { name: 'CONTACT', path: '/contact' },
   ];
 
@@ -64,12 +64,12 @@ export default function Navbar({ cartCount, onOpenCart }) {
             className="relative flex items-center space-x-2 px-4 py-2 bg-[#3B2922] text-[#FAF7F2] rounded-xl hover:bg-[#C68B59] transition-all shadow-md active:scale-95"
           >
             <ShoppingBag size={18} />
-            <span className="text-xs font-bold tracking-wider hidden sm:inline">CART</span>
+             <span className="text-xs font-bold tracking-wider hidden sm:inline">CART</span>
             {/* {cartCount > 0 && (
               <span className="bg-[#C68B59] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">
                 {cartCount}
               </span>
-            )} */}
+            )}  */}
           </button>
         </div>
 

@@ -41,12 +41,20 @@ export default function ProductCard({ item, onAddToCart }) {
 
         {/* Footer Price & Add Button */}
         <div className="mt-5 pt-3 border-t border-[#F3EFEA] flex items-center justify-between">
-          <div>
+          {/* <div>
             <span className="text-[10px] uppercase font-bold text-[#A8988B] block">Price</span>
             <span className="font-serif font-bold text-[#3B2922] text-base">
               Rs {item.price}
             </span>
-          </div>
+          </div> */}
+          <div>
+  <span className="block text-[10px] font-bold text-[#A8988B] uppercase tracking-wider">
+    PRICE
+  </span>
+  <span className="text-sm font-bold font-sans text-[#3B2922]">
+    Rs {item.price}
+  </span>
+</div>
 
           <button 
             onClick={() => onAddToCart(item)}

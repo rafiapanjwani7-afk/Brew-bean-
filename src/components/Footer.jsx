@@ -1,142 +1,102 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Coffee, Camera, Globe, Share2, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2A1D18] text-[#FAF7F2] border-t border-[#3B2922] pt-16 pb-8 px-6 mt-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#3B2922]">
+    <footer className="bg-[#2A1D17] text-[#FAF7F2] pt-14 pb-8 border-t border-[#3B2922]">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
         
-        {/* Brand Column */}
-        <div className="lg:col-span-2 space-y-4">
-          <Link to="/" className="inline-flex items-center space-x-2 group">
-            <div className="p-2 bg-[#C68B59] text-white rounded-xl group-hover:bg-[#EADFCF] group-hover:text-[#2A1D18] transition-colors">
-              <Coffee size={20} />
+        {/* Brand Info */}
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3">
+            <div className="w-9 h-9 bg-[#C68B59] rounded-xl flex items-center justify-center text-[#2A1D17]">
+              <i className="fa-solid fa-[#2A1D17] fa-mug-hot text-lg"></i>
             </div>
             <div>
-              <span className="text-xl font-serif font-bold tracking-widest text-[#FAF7F2] block leading-tight">
-                BREW & BEAN
-              </span>
-              <span className="text-[9px] tracking-[0.25em] text-[#C68B59] font-bold uppercase block">
-                Specialty Coffee
-              </span>
+              <h3 className="font-serif font-bold text-base tracking-widest text-[#FAF7F2]">BREW & BEAN</h3>
+              <p className="text-[9px] tracking-widest text-[#C68B59] uppercase font-semibold">Specialty Coffee</p>
             </div>
-          </Link>
-
-          <p className="text-xs text-[#EADFCF]/70 font-serif italic max-w-sm pt-1">
+          </div>
+          
+          <p className="text-xs text-[#A8988B] italic leading-relaxed">
             "Thoughtfully brewed coffee, freshly baked treats, and cozy moments crafted for slowing down."
           </p>
 
-          <div className="pt-2 space-y-2 text-xs text-[#EADFCF]/60">
-            <div className="flex items-center space-x-2">
-              <MapPin size={14} className="text-[#C68B59] flex-shrink-0" />
+          {/* Contact Details with Font Awesome */}
+          <div className="space-y-2 pt-2 text-xs text-[#A8988B]">
+            <div className="flex items-center space-x-3">
+              <i className="fa-solid fa-location-dot w-4 text-[#C68B59]"></i>
               <span>DHA Phase 5, Karachi, Pakistan</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Phone size={14} className="text-[#C68B59] flex-shrink-0" />
+            <div className="flex items-center space-x-3">
+              <i className="fa-solid fa-phone w-4 text-[#C68B59]"></i>
               <span>+92 300 1234567</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Mail size={14} className="text-[#C68B59] flex-shrink-0" />
+            <div className="flex items-center space-x-3">
+              <i className="fa-regular fa-envelope w-4 text-[#C68B59]"></i>
               <span>hello@brewandbean.com</span>
             </div>
           </div>
         </div>
 
-        {/* Navigation Links */}
-        <div className="space-y-3">
-          <h4 className="text-[11px] font-bold tracking-[0.2em] text-[#C68B59] uppercase">
-            Quick Links
-          </h4>
-          <ul className="space-y-2 text-xs text-[#EADFCF]/80">
-            <li>
-              <Link to="/" className="hover:text-[#C68B59] transition-colors">Home</Link>
-            </li>
-            <li>
-              <Link to="/products" className="hover:text-[#C68B59] transition-colors">All Products</Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-[#C68B59] transition-colors">Our Story</Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-[#C68B59] transition-colors">Contact Us</Link>
-            </li>
+        {/* Quick Links */}
+        <div>
+          <h4 className="text-xs font-bold text-[#C68B59] tracking-widest uppercase mb-4">Quick Links</h4>
+          <ul className="space-y-2 text-xs text-[#A8988B]">
+            <li><Link to="/" className="hover:text-[#FAF7F2] transition-colors">Home</Link></li>
+            <li><Link to="/products" className="hover:text-[#FAF7F2] transition-colors">All Products</Link></li>
+            <li><Link to="/about" className="hover:text-[#FAF7F2] transition-colors">Our Story</Link></li>
+            <li><Link to="/contact" className="hover:text-[#FAF7F2] transition-colors">Contact Us</Link></li>
           </ul>
         </div>
 
-        {/* Menu Categories */}
-        <div className="space-y-3">
-          <h4 className="text-[11px] font-bold tracking-[0.2em] text-[#C68B59] uppercase">
-            Menu
-          </h4>
-          <ul className="space-y-2 text-xs text-[#EADFCF]/80">
-            <li>
-              <Link to="/products/coffee" className="hover:text-[#C68B59] transition-colors">Specialty Coffee</Link>
-            </li>
-            <li>
-              <Link to="/products/desserts" className="hover:text-[#C68B59] transition-colors">Artisanal Desserts</Link>
-            </li>
-            <li>
-              <Link to="/products/bakery" className="hover:text-[#C68B59] transition-colors">Fresh Bakery</Link>
-            </li>
+        {/* Menu */}
+        <div>
+          <h4 className="text-xs font-bold text-[#C68B59] tracking-widest uppercase mb-4">Menu</h4>
+          <ul className="space-y-2 text-xs text-[#A8988B]">
+            <li><Link to="/products/coffee" className="hover:text-[#FAF7F2] transition-colors">Specialty Coffee</Link></li>
+            <li><Link to="/products/desserts" className="hover:text-[#FAF7F2] transition-colors">Artisanal Desserts</Link></li>
+            <li><Link to="/products/bakery" className="hover:text-[#FAF7F2] transition-colors">Fresh Bakery</Link></li>
           </ul>
         </div>
 
-        {/* Working Hours */}
-        <div className="space-y-3">
-          <h4 className="text-[11px] font-bold tracking-[0.2em] text-[#C68B59] uppercase">
-            Café Hours
-          </h4>
-          <p className="text-xs text-[#EADFCF]/80 leading-relaxed">
-            Mon – Fri: 8:00 AM – 10:00 PM<br />
-            Sat – Sun: 8:00 AM – 11:00 PM
-          </p>
-          <span className="inline-block mt-2 text-[10px] bg-[#3B2922] text-[#C68B59] px-2.5 py-1 rounded-full font-bold tracking-wider">
+        {/* Cafe Hours */}
+        <div>
+          <h4 className="text-xs font-bold text-[#C68B59] tracking-widest uppercase mb-4">Café Hours</h4>
+          <div className="space-y-1.5 text-xs text-[#A8988B]">
+            <p><span className="font-semibold text-[#FAF7F2]">Mon – Fri:</span> 8:00 AM – 10:00 PM</p>
+            <p><span className="font-semibold text-[#FAF7F2]">Sat – Sun:</span> 8:00 AM – 11:00 PM</p>
+          </div>
+          <span className="inline-block mt-4 px-3 py-1 bg-[#3B2922] text-[#C68B59] text-[10px] font-bold rounded-full border border-[#4A3830]">
             OPEN DAILY
           </span>
         </div>
 
       </div>
 
-      {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#EADFCF]/50 gap-4">
+      {/* Bottom Bar with Social Media Icons */}
+      <div className="max-w-6xl mx-auto px-6 pt-6 border-t border-[#3B2922] flex flex-col md:flex-row items-center justify-between text-xs text-[#A8988B] gap-4">
         <p>© 2026 BREW & BEAN. All Rights Reserved.</p>
-        
-        {/* Social Icons */}
-        <div className="flex space-x-4 text-[#FAF7F2]">
-          <a 
-            href="https://instagram.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="p-2 bg-[#3B2922] rounded-full hover:bg-[#C68B59] hover:text-white transition-all"
-            aria-label="Instagram"
-          >
-            <Camera size={15} />
+
+        {/* Social Icons using Font Awesome */}
+        <div className="flex items-center space-x-3">
+          <a href="#" className="w-8 h-8 rounded-full bg-[#3B2922] flex items-center justify-center text-[#A8988B] hover:text-[#FAF7F2] hover:bg-[#C68B59] transition-all">
+            <i className="fa-brands fa-instagram text-sm"></i>
           </a>
-          <a 
-            href="https://facebook.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="p-2 bg-[#3B2922] rounded-full hover:bg-[#C68B59] hover:text-white transition-all"
-            aria-label="Facebook"
-          >
-            <Share2 size={15} />
+          <a href="#" className="w-8 h-8 rounded-full bg-[#3B2922] flex items-center justify-center text-[#A8988B] hover:text-[#FAF7F2] hover:bg-[#C68B59] transition-all">
+            <i className="fa-brands fa-facebook-f text-sm"></i>
           </a>
-          <a 
-            href="https://brewandbean.com" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="p-2 bg-[#3B2922] rounded-full hover:bg-[#C68B59] hover:text-white transition-all"
-            aria-label="Website"
-          >
-            <Globe size={15} />
+          <a href="#" className="w-8 h-8 rounded-full bg-[#3B2922] flex items-center justify-center text-[#A8988B] hover:text-[#FAF7F2] hover:bg-[#C68B59] transition-all">
+            <i className="fa-brands fa-whatsapp text-sm"></i>
+          </a>
+          <a href="#" className="w-8 h-8 rounded-full bg-[#3B2922] flex items-center justify-center text-[#A8988B] hover:text-[#FAF7F2] hover:bg-[#C68B59] transition-all">
+            <i className="fa-solid fa-globe text-sm"></i>
           </a>
         </div>
 
-        {/* Legal Links */}
-        <div className="flex space-x-4 text-[11px]">
-          <a href="#privacy" className="hover:text-[#C68B59] transition-colors">Privacy Policy</a>
-          <a href="#terms" className="hover:text-[#C68B59] transition-colors">Terms of Service</a>
+        <div className="flex space-x-4 text-xs">
+          <a href="#" className="hover:text-[#FAF7F2] transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-[#FAF7F2] transition-colors">Terms of Service</a>
         </div>
       </div>
     </footer>

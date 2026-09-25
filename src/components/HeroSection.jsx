@@ -1,20 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Award, ShieldCheck, Flame } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
+import React from 'react'
 
-
-export default function HomePage({ menuData, onAddToCart }) {
-  // Take top items for showcase
-  const featuredItems = [
-    ...(menuData?.coffee || []).slice(0, 2),
-    ...(menuData?.desserts || []).slice(0, 1),
-    ...(menuData?.bakery || []).slice(0, 1),
-  ];
-
+const Herosection = () => {
   return (
-    <div className="bg-[#FAF7F2] text-[#3B2922]">
-<section className="relative py-10 md:py-14 px-6 md:px-12 overflow-hidden bg-[#FAF7F2]">
+    <>
+    <section className="relative py-10 md:py-14 px-6 md:px-12 overflow-hidden bg-[#FAF7F2]">
   {/* Background Glow */}
   <div className="absolute -top-16 -right-16 w-80 h-80 bg-[#C68B59]/15 rounded-full blur-3xl pointer-events-none" />
 
@@ -81,55 +70,8 @@ export default function HomePage({ menuData, onAddToCart }) {
 
   </div>
 </section>
-
-      {/* Feature Highlights */}
-      {/* <section className="bg-white py-10 border-y border-[#EADFCF]/60 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="flex flex-col items-center space-y-2">
-            <Award className="text-[#C68B59]" size={28} />
-            <h3 className="font-serif font-bold text-sm text-[#3B2922]">Single Origin Beans</h3>
-            <p className="text-xs text-[#6B5E57]">Hand-picked Arabica from high-altitude farms.</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <Sparkles className="text-[#C68B59]" size={28} />
-            <h3 className="font-serif font-bold text-sm text-[#3B2922]">Baked In-House</h3>
-            <p className="text-xs text-[#6B5E57]">Croissants and pastries baked fresh every morning.</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2">
-            <ShieldCheck className="text-[#C68B59]" size={28} />
-            <h3 className="font-serif font-bold text-sm text-[#3B2922]">Express Delivery</h3>
-            <p className="text-xs text-[#6B5E57]">Warm coffee & fresh bakery delivered to your door.</p>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Featured Menu Items Grid */}
-      {/* <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
-          <div>
-            <span className="text-[11px] font-bold tracking-[0.2em] text-[#C68B59] uppercase">
-              Curated Selection
-            </span>
-            <h2 className="text-3xl font-serif font-bold text-[#3B2922] mt-1">
-              Popular Favorites
-            </h2>
-          </div>
-          <Link 
-            to="/products" 
-            className="text-xs font-bold text-[#C68B59] hover:underline mt-2 md:mt-0 inline-flex items-center space-x-1"
-          >
-            <span>VIEW ALL ITEMS</span>
-            <ArrowRight size={14} />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredItems.map((item) => (
-            <ProductCard key={item.id} item={item} onAddToCart={onAddToCart} />
-          ))}
-        </div>
-      </section> */}
-
-    </div>
-  );
+    </>
+  )
 }
+
+export default Herosection
